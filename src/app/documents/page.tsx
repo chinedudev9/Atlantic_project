@@ -1,8 +1,10 @@
+import SafetyBanner from '@/components/SafetyBanner';
 import React from 'react';
 
 const documents = [
   { title: 'Compliance & Commitment to Global Standards', date: 'May 31, 2019', link: '/pdf/CCGS.pdf' },
   { title: 'Corporate Overview', date: 'November 28, 2020', link: '/pdf/corporate-overview.pdf' },
+  { title: 'Company Organogram', date: 'February 11, 2022', link: '/pdf/AFSS_organogram.pdf' },
   { title: 'Career Overview', date: 'May 31, 2019', link: '/pdf/career_afss.pdf' },
   { title: 'Modern Slavery Policy', date: 'April 4, 2022', link: '/pdf/mdsp.pdf' },
   { title: 'AFSS Policy', date: 'April 4, 2022', link: '/pdf/Revised_AFSS_Policy.pdf' },
@@ -13,6 +15,8 @@ const documents = [
 
 function pages() {
   return (
+    <div className="">
+      <SafetyBanner />
     <div className="min-h-screen p-8 bg-gray-100">
     <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">Info Centre</h1>
@@ -30,6 +34,7 @@ function pages() {
         ))}
       </ul>
     </div>
+  </div>
   </div>
   )
 }

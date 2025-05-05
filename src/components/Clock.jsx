@@ -2,26 +2,26 @@
 
 import { useEffect, useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
+import { DateTime } from 'luxon';
 
 const cities = [
-  { name: 'Lagos', tz: 'Africa/Lagos'},
-  { name: 'Singapore', tz: 'Asia/Singapore'},
-  { name: 'Lomé', tz: 'Africa/Lome'},
-  { name: 'Dakar', tz: 'Africa/Dakar'},
-  { name: 'Abidjan', tz: 'Africa/Abidjan'},
-  { name: 'Douala', tz: 'Africa/Douala'},
+  { name: 'Lagos', tz: 'Africa/Lagos' },
+  { name: 'Singapore', tz: 'Asia/Singapore' },
+  { name: 'Lomé', tz: 'Africa/Lome' },
+  { name: 'Dakar', tz: 'Africa/Dakar' },
+  { name: 'Abidjan', tz: 'Africa/Abidjan' },
+  { name: 'Douala', tz: 'Africa/Douala' },
 ];
 
+// Get DateTime object in specific time zone
 const getTimeInTZ = (tz) => {
-  const now = new Date();
-  const localTime = now.toLocaleString('en-US', { timeZone: tz });
-  return new Date(localTime);
+  return DateTime.now().setZone(tz);
 };
 
 const ClockFace = ({ time }) => {
-  const sec = time.getSeconds();
-  const min = time.getMinutes();
-  const hour = time.getHours() % 12;
+  const sec = time.second;
+  const min = time.minute;
+  const hour = time.hour % 12;
 
   const hourDeg = (hour + min / 60) * 30;
   const minDeg = (min + sec / 60) * 6;
@@ -30,9 +30,7 @@ const ClockFace = ({ time }) => {
   const numbers = Array.from({ length: 12 }, (_, i) => i + 1);
 
   return (
-    <div 
-    style={{ backgroundColor: "var(--background)" }}
-    className="relative z-20 w-25 h-25 rounded-full border-2 bg-gray-800">
+    <div className="relative w-28 h-28 rounded-full border-2 bg-gray-800">
       {numbers.map((num) => {
         const angle = ((num - 3) * 30 * Math.PI) / 180;
         const x = 50 + 42 * Math.cos(angle);
@@ -41,7 +39,7 @@ const ClockFace = ({ time }) => {
         return (
           <span
             key={num}
-            className="absolute  text-sm font-semibold"
+            className="absolute text-xs font-semibold text-white"
             style={{
               left: `${x}%`,
               top: `${y}%`,
@@ -55,8 +53,8 @@ const ClockFace = ({ time }) => {
 
       {/* Clock Hands */}
       <div
-        className="absolute text-white w-0.5 h-5.5 origin-bottom left-1/2 top-[30%]"
-        style={{ transform: `translateX(-50%) rotate(${hourDeg}deg)`, backgroundColor: "var(--background)" }}
+        className="absolute w-0.5 h-5 bg-white origin-bottom left-1/2 top-[35%]"
+        style={{ transform: `translateX(-50%) rotate(${hourDeg}deg)` }}
       />
       <div
         className="absolute w-0.5 h-8 bg-blue-400 origin-bottom left-1/2 top-[20%]"
@@ -66,12 +64,12 @@ const ClockFace = ({ time }) => {
         className="absolute w-0.5 h-10 bg-red-500 origin-bottom left-1/2 top-[10%]"
         style={{ transform: `translateX(-50%) rotate(${secDeg}deg)` }}
       />
-      <div className="absolute w-3 h-3 bg-black rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10" />
+      <div className="absolute w-2 h-2 bg-black rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10" />
     </div>
   );
 };
 
-const AnalogClock = ({ name, tz, flag }) => {
+const AnalogClock = ({ name, tz }) => {
   const [time, setTime] = useState(getTimeInTZ(tz));
   const [weather, setWeather] = useState(null);
 
@@ -101,29 +99,24 @@ const AnalogClock = ({ name, tz, flag }) => {
     fetchWeather();
   }, [name]);
 
-  const isDay = time.getHours() >= 6 && time.getHours() < 18;
-  const dateStr = time.toLocaleDateString('en-US', {
-    weekday: 'short',
-    month: 'long',
-    day: '2-digit',
-    year: 'numeric',
-  });
+  const isDay = time.hour >= 6 && time.hour < 18;
+  const dateStr = time.toFormat('ccc, LLL dd, yyyy');
 
   return (
-    <div className="p-4 rounded-xl shadow-lg w-60 flex flex-col items-center">
-      <div className="flex items-center justify-between w-full text-2xl mb-2">
-        <span>{flag}</span>
+    <div className="p-4 bg-gray-200 rounded-xl shadow-lg w-60 flex flex-col items-center text-gray-900">
+      <div className="flex items-center justify-between w-full text-lg mb-2">
+        <span>🕓</span>
         {isDay ? (
-          <Sun className="text-yellow-400 w-5 h-5" />
+          <Sun className="text-yellow-500 w-5 h-5" />
         ) : (
-          <Moon className="text-blue-400 w-5 h-5" />
+          <Moon className="text-blue-500 w-5 h-5" />
         )}
       </div>
-      <h2 className="text-lg font-bold mb-2">{name}</h2>
+      <h2 className="text-md font-bold mb-2">{name}</h2>
       <ClockFace time={time} />
-      <p className="mt-3 font-semibold">
-        {dateStr} </p>
-      <p className='font-medium'>  {weather && ` 🌤️ ${weather.charAt(0).toUpperCase() + weather.slice(1)}`}
+      <p className="mt-3 font-semibold">{dateStr}</p>
+      <p className="font-medium">
+        {weather && `🌤️ ${weather.charAt(0).toUpperCase() + weather.slice(1)}`}
       </p>
     </div>
   );
@@ -131,21 +124,19 @@ const AnalogClock = ({ name, tz, flag }) => {
 
 const AnalogClockGrid = () => {
   return (
-    
-    <div className='relative' style={{ backgroundColor: "var(--background)" }}>
-        <div className="flex items-center pt-8 justify-center mb-10">
-               <hr className="w-10 md:w-30 border-red-500" />
-               <h2 className="mx-2 md:4 text-blue-800 text-2xl font-bold">🌧️ Report</h2>
-               <hr className="w-10 md:w-30 border-gray-600" />
-        </div>
-<div className="overflow-x-auto md:overflow-x-visible rounded-3xl whitespace-nowrap flex lg:flex-nowrap gap-6 p-4">
-  {cities.map((city) => (
-    <div key={city.name} className="inline-block bg-gray-300 rounded-md text-green-900 md:flex-shrink-0">
-      <AnalogClock {...city} />
+    <div className="relative bg-white py-10">
+      <div className="flex items-center justify-center mb-6">
+        <hr className="w-10 border-red-500" />
+        <h2 className="mx-4 text-blue-800 text-xl font-bold">🌍 Weather Clocks</h2>
+        <hr className="w-10 border-gray-600" />
+      </div>
+
+      <div className="overflow-x-auto flex gap-6 px-4">
+        {cities.map((city) => (
+          <AnalogClock key={city.name} {...city} />
+        ))}
+      </div>
     </div>
-  ))}
-</div>
-</div>
   );
 };
 
