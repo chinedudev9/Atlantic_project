@@ -1,0 +1,99 @@
+"use client";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion } from "motion/react";
+import SearchToggle from "@/components/SearchToggle";
+import { usePathname } from "next/navigation";
+
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  return (
+    <header className="py-3 md:py-1 pl-6 pr-4 shadow-2xl rounded-b-3xl md:rounded-b-none"
+      style={{ backgroundColor: "var(--background)" }}>
+      <div className="flex justify-between md:h-15 items-center max-w-6xl mx-auto">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 1, x: 50 }}
+          animate={{ opacity: 1, x: 5 }}
+          transition={{ duration: 3 }}
+           className='flex-shrink-0.5 w-auto hover:animate-pulse cursor-pointer'>
+          <Link href="/">
+          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={120} height={40} className='w-[25vh]'/>
+          </Link>
+        </motion.div>
+
+        <div className="flex gap-4 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }} 
+            animate={{ opacity: 1, x: 0 }}   
+            transition={{ duration: 2 }}
+            className="lg:hidden md:pr-8 justify-center items-center">
+            <button className='justify-center items-center cursor-pointer' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={25} /> : <Menu size={25} />}
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Desktop Navigation - Hidden on small screens */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 3 }}
+          className="hidden lg:flex items-center">
+            <SearchToggle />
+            <div className="hidden font-medium text-sm md:flex gap-5 items-center justify-center
+             ml-5 mr-10 py-0.5 px-2.5">
+              <Link href="/" className={`relative pb-1.5 hover:text-blue-800 ${
+                pathname === '/' ? 'hover:text-blue-800' : ''}`}>
+                HOME {pathname === '/' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
+              <Link href="/company" className={`relative pb-1.5 hover:text-blue-800 ${
+                pathname === '/company' ? 'hover:text-blue-800' : ''}`}>
+                COMPANY {pathname === '/company' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
+              <Link href="/services" className={`relative pb-1.5 hover:text-blue-800  ${
+                pathname === '/services' ? 'hover:text-blue-800' : ''}`}>
+                SERVICES {pathname === '/services' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
+              <Link href="/fleets" className={`relative pb-1.5 hover:text-blue-800 ${
+                pathname === '/fleets' ? 'hover:text-blue-800' : ''}`}>
+                FLEETS {pathname === '/fleets' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
+              <Link href="/gallery" className={`relative pb-1.5 hover:text-blue-800 ${
+                pathname === '/galley' ? 'hover:text-blue-800' : ''}`}>
+                GALLERY {pathname === '/gallery' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
+            </div> 
+        </motion.div>
+      </div>
+
+      {/* Mobile Menu - Shown when menu is open */}
+      {isMenuOpen && (
+        <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 2 }}
+        transition={{ duration: 2 }}
+        className="absolute top-16 right-0 w-55 mt-0.5 border-l rounded-b-3xl z-50 shadow-lg lg:hidden"
+        style={{ backgroundColor: "var(--background)" }}>
+          <motion.div
+            initial={{ opacity: 1, x: 50 }}
+            animate={{ opacity: 1, x: 2 }}
+            transition={{ duration: 2 }}
+            className="flex flex-col items-center text-sm gap-4 pb-6 p-4">
+            <SearchToggle />
+              <Link className='' href="/">HOME</Link>
+              <Link className='' href="/company">COMPANY</Link>
+              <Link className='' href="/services">SERVICES</Link>
+              <Link className='' href="/fleets">FLEETS</Link>
+              <Link className='' href="/gallery">GALLERY</Link>
+              <Link className='' href="/career">CAREER</Link>
+          </motion.div>
+        </motion.div>
+      )}
+    </header>
+  );
+}

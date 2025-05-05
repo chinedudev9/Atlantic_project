@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+:root {
+  --background: #ffffff;
+  --text-color: #000000;
+  --icon: #ffffff;
+  --primary: #6a0dad;
+  --secondary: hsl(138, 57%, 25%);
+  --accent: #bbaab1;
+  --accent2: #661a3b;
+  --top-header: rgb(9, 9, 39);
+  --top-header-text: #ffffff;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+  
+/* Allow scrolling but blur and dim the page content */
+.cookie-overlay #__next {
+  filter: blur(5px) brightness(0.7);
+  pointer-events: auto; /* allow scrolling */
+}
