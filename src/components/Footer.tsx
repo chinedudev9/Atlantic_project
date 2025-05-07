@@ -31,7 +31,7 @@ const Footer = () => {
              <p className="text-center px-10 text-xs">2nd Floor Eleganza House, 15 Wesley Joseph Street, Lagos Island, Lagos, Nigeria</p>
           </div>
         </div>
-        <div className="flex md:gap-[50vh] space-x-25 justify-center items-center mt-8 pb-20">
+        <div className="flex lg:gap-[50vh] md:space-x-10 gap-x-30 sm:px-10 text-nowrap px-4 justify-center items-center mt-8 pb-20">
           <div className="items-center justify-center text-center">
              <div className="items-center justify-center flex flex-col mb-1">
              <IoCallOutline size={25} className='mb-2'/>
@@ -40,14 +40,14 @@ const Footer = () => {
              </div>
           </div>
           <div className="items-center justify-center space-y-3">
-          <div className="mb-5 items-center justify-center flex flex-col">
-          <TfiEmail size={25} className='items-center justify-center mb-2'/>
-          <p className="">sts@atlanticfenders.com</p>
-          </div>
-          <div className="items-center justify-center flex flex-col mb-1">
-          <TfiEmail size={25} className=' mb-2'/>
-          <p className="text-center">info@atlanticfenders.com</p>
-          </div>
+             <div className="mb-5 items-center justify-center flex flex-col">
+               <TfiEmail size={25} className='items-center justify-center mb-2'/>
+               <p className="">sts@atlanticfenders.com</p>
+             </div>
+             <div className="items-center justify-center flex flex-col mb-1">
+               <TfiEmail size={25} className=' mb-2'/>
+               <p className="text-center">info@atlanticfenders.com</p>
+              </div>
           </div>
         </div>
         <div className="flex space-x-4 md:space-x-8 justify-center items-center mt-8 pb-20">

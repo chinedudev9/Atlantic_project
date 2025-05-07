@@ -20,9 +20,9 @@ export default function Header() {
           initial={{ opacity: 1, x: 50 }}
           animate={{ opacity: 1, x: 5 }}
           transition={{ duration: 3 }}
-           className='flex-shrink-0.5 w-auto hover:animate-pulse cursor-pointer'>
+           className='flex-shrink-0.5 hover:animate-pulse cursor-pointer'>
           <Link href="/">
-          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={120} height={40} className='w-[25vh]'/>
+          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={150} height={80} className='w-[15]'/>
           </Link>
         </motion.div>
 

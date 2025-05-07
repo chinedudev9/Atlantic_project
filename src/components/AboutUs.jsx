@@ -20,7 +20,7 @@ function HeroThird() {
           <div className="flex items-center justify-center pt-10 md:pt-0 mb-">
             <hr className="w-10 md:w-20 border-red-600" />
             <h2 className="mx-2 md:mx-4 text-2xl md:text-3xl font-bold text-blue-900">
-              Core <span className="text-red-600">Value</span>
+              Core <span className="text-red-600">Values</span>
             </h2>
             <hr className="w-10 md:w-20 border-gray-600" />
           </div>
@@ -74,7 +74,7 @@ function HeroThird() {
           </div>
 
           {/* Tabs */}
-          <div className="flex font-semibold text-xl items-center justify-center space-x-20 border-b border-gray-300 pb-2">
+          <div className="flex font-semibold md:text-xl items-center md:ml-15 ml-2 space-x-10 border-b border-gray-300 pb-2">
             <button
               onClick={() => setActiveTab("company")}
               className={`font-semibold text-xl cursor-pointer transition ${
@@ -100,7 +100,7 @@ function HeroThird() {
           {/* Tab Content */}
           <div className="text-base leading-relaxed">
             {activeTab === "company" && (
-              <div className="items-center justify-center h-auto md:h-[80vh] md:px-10 md:mx-10 px-4 p-3 rounded-4xl mt-1 shadow-2xl mb-5 shadow-gray-600">
+              <div className="items-center justify-center h-auto text-sm md:px-10 md:mx-10 px-4 p-3 rounded-4xl mt-1 shadow-2xl mb-5 shadow-gray-600">
                <p className=""> Atlantic Fenders & Support Services (AFSS) is a certified marine
                 logistics and offshore support company proudly serving the Marine Oil
                 & Gas industry across West Africa. With a Document of Compliance (DOC)
@@ -122,22 +122,22 @@ function HeroThird() {
                 <Image
                   src="/certs/cert1.png"
                   alt="Certificate 1"
-                  width={300}
-                  height={150}
+                  width={200}
+                  height={100}
                   className="rounded-lg shadow"
                 />
                 <Image
                   src="/certs/cert2.png"
                   alt="Certificate 2"
-                  width={300}
-                  height={150}
+                  width={200}
+                  height={100}
                   className="rounded-lg shadow"
                 />
                 <Image
                   src="/certs/cert3.jpg"
                   alt="Certificate 3"
-                  width={300}
-                  height={150}
+                  width={200}
+                  height={100}
                   className="rounded-lg shadow"
                 />
               </div>

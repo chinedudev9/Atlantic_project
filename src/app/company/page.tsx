@@ -104,8 +104,6 @@ function Page() {
           </Link>
       </div>
       </div>
-      <div className="w-full h-auto  flex flex-col items-center justify-center mt-10 mb-10">
-      </div>
      <Policy />
     </div>
   )

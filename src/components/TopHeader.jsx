@@ -66,7 +66,7 @@ function TopHeader() {
       </div>
           
         {/* Right: Contact Info */}
-        <div className="flex text-sm items-center gap-6" style={{ color: "var(--icon)" }}>
+        <div className="flex text-sm items-center text-nowrap gap-6" style={{ color: "var(--icon)" }}>
            <Link href={"/career"}><h2 className="cursor-pointer hover:underline">Career</h2></Link>
            <button className='cursor-pointer hover:underline' onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Contact Us
            </button>
