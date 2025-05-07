@@ -12,7 +12,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="py-3 md:py-1 pl-6 pr-4 shadow-2xl rounded-b-3xl md:rounded-b-none"
+    <header className="py-3 md:py-1 pl-6 pr-4 shadow-2xl rounded-b-xl md:rounded-b-none"
       style={{ backgroundColor: "var(--background)" }}>
       <div className="flex justify-between md:h-15 items-center max-w-6xl mx-auto">
         {/* Logo */}
@@ -22,7 +22,8 @@ export default function Header() {
           transition={{ duration: 3 }}
            className='flex-shrink-0.5 hover:animate-pulse cursor-pointer'>
           <Link href="/">
-          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={150} height={80} className='md:w-[25]w-[20]'/>
+          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={150} height={80} className='object-contain outline-none'
+           sizes="(max-width: 768px) 120px, 150px" priority />
           </Link>
         </motion.div>
 

@@ -31,7 +31,7 @@ const Footer = () => {
              <p className="text-center px-10 text-xs">2nd Floor Eleganza House, 15 Wesley Joseph Street, Lagos Island, Lagos, Nigeria</p>
           </div>
         </div>
-        <div className="flex lg:gap-[50vh] md:space-x-10 gap-x-30 sm:px-10 text-nowrap px-4 justify-center items-center mt-8 pb-20">
+        <div className="flex lg:gap-[50vh] md:space-x-10 gap-x-25 sm:px-10 text-nowrap px-7 justify-center items-center mt-8 pb-20">
           <div className="items-center justify-center text-center">
              <div className="items-center justify-center flex flex-col mb-1">
              <IoCallOutline size={25} className='mb-2'/>
