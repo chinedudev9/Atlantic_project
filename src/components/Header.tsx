@@ -22,7 +22,7 @@ export default function Header() {
           transition={{ duration: 3 }}
            className='flex-shrink-0.5 hover:animate-pulse cursor-pointer'>
           <Link href="/">
-          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={150} height={80} className='w-[15]'/>
+          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={150} height={80} className='md:w-[25]w-[20]'/>
           </Link>
         </motion.div>
 
