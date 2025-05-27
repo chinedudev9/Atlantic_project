@@ -4,11 +4,11 @@ import React from 'react'
 import { FaEnvelope } from 'react-icons/fa'
 
 async function page() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tenants/${process.env.NEXT_PUBLIC_TENANT_ID}/external/vacancies`, {
-    headers: { Accept: 'application/json' }
-  });
-  const data = await res.json();
-  const vacancies = data.data || [];
+  //  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tenants/${process.env.NEXT_PUBLIC_TENANT_ID}/external/vacancies`, {
+  //  headers: { Accept: 'application/json' }
+ // });
+  //const data = await res.json();
+ // const vacancies = data.data || [];
 
   return (
     <div className='justify-center items-center'>
@@ -113,10 +113,10 @@ async function page() {
         </div>
         </div>
       </div>
-      <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
+     {/* <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
       <h1 className="text-xl font-bold mb-4">Job Board</h1>
       {vacancies.length === 0 ? (
-        <p>No vacancies at the moment. Please check back later.</p>
+       <p>No vacancies at the moment. Please check back later.</p>
       ) : (
         <ul>
           {vacancies.map((vacancy: { id: React.Key | null | undefined; title: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; description: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; }) => (
@@ -127,8 +127,9 @@ async function page() {
             </li>
           ))}
         </ul>
+      
       )}
-    </div>
+    </div> */}
     </div>
   )
 }

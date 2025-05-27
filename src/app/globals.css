@@ -23,7 +23,6 @@ body {
   padding: 0;
 }
   
-/* Allow scrolling but blur and dim the page content */
 .cookie-overlay #__next {
   filter: blur(5px) brightness(0.7);
   pointer-events: auto; /* allow scrolling */
