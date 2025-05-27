@@ -14,18 +14,18 @@ const Footer = () => {
           Atlantic Fenders & Support Services
         </div>
 
-      <div className="flex pb-10 gap-4 mt-4 justify-center">
+      <div className="flex pb-10 gap-2 mt-2 justify-center">
           <Link href="https://www.linkedin.com/company/atlantic-fenders-and-support-services/" className=" hover:text-white">
-            <FaLinkedin size={25} />
+            <FaLinkedin size={23} color="#0077B5" />
           </Link>
           <Link href="https://www.youtube.com/channel/UCwlwl7U73ta6afKo4ahADJQ" className=" hover:text-white">
-            <FaYoutube size={25} />
+            <FaYoutube size={23} color="#FF0000" />
           </Link>
         </div>
         <div className="justify-center items-center mt-8">
           <div className="">
-            <div className=" justify-center items-center gap-2 flex">
-             <MdLocationOn size={25} />
+            <div className="mb-2 justify-center items-center gap-2 flex">
+             <MdLocationOn size={20} />
              <p className="">Head Office</p>
              </div>
              <p className="text-center px-10 text-xs">2nd Floor Eleganza House, 15 Wesley Joseph Street, Lagos Island, Lagos, Nigeria</p>

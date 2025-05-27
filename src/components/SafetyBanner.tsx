@@ -2,7 +2,7 @@ import React from 'react'
 
 function safetyBanner() {
   return (
-<div className="relative h-[60vh] w-full overflow-hidden">
+<div className="relative h-[80vh] w-full overflow-hidden">
   {/* Video Background */}
   <video
     className="absolute top-0 left-0 w-full h-full object-cover"

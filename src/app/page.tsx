@@ -12,7 +12,7 @@ import TeamComponent from "@/components/TeamComponent";
 import Partner from "@/components/Partner";
 import Policy from "@/components/Policy";
 import ServiceComponent from "@/components/ServiceComponent";
-
+import VacancyAlert from "@/components/VacancyAlert";
 
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
       <Policy />
       
        
-       
+       <VacancyAlert />
       <ContactPopup />
       <LiveChatWidget />
       <CookieBanner />

@@ -74,7 +74,7 @@ function ServiceComponent() {
             <button
               key={index}
               onClick={() => setCurrentService(index)}
-              className={`px-4 py-2 rounded-full text-xs md:text-sm font-medium transition ${
+              className={`px-4 py-2 rounded-full text-xs md:text-xl font-medium transition ${
                 currentService === index
                   ? "bg-blue-900 text-gray-200"
                   : " text-gray-200 hover:underline"

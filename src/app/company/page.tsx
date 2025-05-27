@@ -4,25 +4,26 @@ import React, { useEffect, useState } from 'react'
 import Contact from '@/components/Contact'
 import Policy from '@/components/Policy';
 import Link from 'next/link';
-import Image from 'next/image';
+import Clock from '@/components/Clock';
+
 
 const messages = [
   {
-    title: 'Our Mission',
+    title: 'Mission',
     content:
-      'To eliminate operational hurdles in Ship to Ship operations and set the global benchmark in offshore support.',
+      'Atlantic Fenders and Support Services, we strive to deliver reliable, innovative, and customer focused marine services that add value to our client while upholding the highest standards of safety, integrity, and professionalism.',
   },
   {
-    title: 'Our Vision',
+    title: 'Vision',
     content:
-      'To be the trusted choice for STS operation, marine logistics, equipment, and consultancy solutions—driven by reliability, efficiency, and client satisfaction.',
+      "To become west Africa's most trusted and responsive provider of integrated maritime and offshore support services - delivering operational excellence in a safe and environmentally sound manner.",
   },
   {
     title: 'Core Values',
     content:
       'Professionalism, Integrity, Teamwork, Customer Focus, Health & Safety',
   },
-]
+];
 
 function Page() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -30,7 +31,7 @@ function Page() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % messages.length)
-    }, 8000) // 8 seconds
+    }, 7000) 
 
     return () => clearInterval(interval)
   }, [])
@@ -56,10 +57,10 @@ function Page() {
         }}
       >
         <div style={{ maxWidth: '800px' }}>
-          <h2 className='text-3xl font-serif sm:text-4xl font-bold mb-4'>
+          <h2 className='text-3xl md:text-5xl font-serif sm:text-4xl font-extrabold mb-4'>
             {currentMessage.title}
           </h2>
-          <p className='font-serif' style={{ fontSize: '1.25rem' }}>{currentMessage.content}</p>
+          <p className='text-sm'>{currentMessage.content}</p>
         </div>
       </div>
       < Contact />
@@ -104,6 +105,7 @@ function Page() {
           </Link>
       </div>
       </div>
+      <Clock />
      <Policy />
     </div>
   )

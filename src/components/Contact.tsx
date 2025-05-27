@@ -1,7 +1,7 @@
 "use client";
 import { IoCallOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
-import { TfiHeadphoneAlt } from "react-icons/tfi";
+import { AiOutlineDollarCircle } from 'react-icons/ai';
 import React, { useState } from "react";
 import PopUp from "@/components/PopUp";
 
@@ -25,10 +25,10 @@ function HeroSecond() {
   </div>
 
   <div className="flex-1 flex flex-col items-center justify-center text-center">
-    <TfiHeadphoneAlt size={30} />
+    <AiOutlineDollarCircle size={30}  />
     <h2 style={{ color: "var(--accent2)" }} className="font-bold text-xl mb-4 mt-3">Enquiries</h2>
     <h2
-      className="md:text-xl text-sm text-white font-bold cursor-pointer bg-red-700 hover:bg-red-900 rounded-lg px-3 py-1 
+      className=" text-white font-bold cursor-pointer bg-red-900 hover:bg-red-700 rounded-lg px-3 py-1.5 shadow-md 
       transition duration-300 ease-in-out"
       onClick={() => setIsOpen(true)}
     >
