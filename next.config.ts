@@ -1,13 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',  ✅ This enables static HTML export
+  env: {
+    API_BASE_URL: process.env.API_BASE_URL,
+    TENANT_ID: process.env.TENANT_ID,
+  },
   onDemandEntries: {
     maxInactiveAge: 25 * 1000, // 25 seconds
     pagesBufferLength: 2,
   },
   images: {
-    domains: ['flagcdn.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+        pathname: '/**', // allow all paths
+      },
+    ],
   },
 };
 
 module.exports = nextConfig;
+
