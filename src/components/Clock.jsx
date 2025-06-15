@@ -125,10 +125,10 @@ const AnalogClock = ({ name, tz }) => {
 const AnalogClockGrid = () => {
   return (
     <div className="relative bg-white py-10">
-      <div className="flex items-center justify-center mb-6">
-        <hr className="w-10 border-red-500" />
-        <h2 className="mx-4 text-blue-800 text-xl font-bold">🌍 Weather Clocks</h2>
-        <hr className="w-10 border-gray-600" />
+              <div className="flex items-center  justify-center mb-10">
+               <hr className="w-10 md:w-30 border-red-500" />
+               <h2 className="mx-2 md:4 text-blue-800 text-2xl font-bold">Weather Clocks</h2>
+               <hr className="w-10 md:w-30 border-gray-600" />
       </div>
 
       <div className="overflow-x-auto flex gap-6 px-4">

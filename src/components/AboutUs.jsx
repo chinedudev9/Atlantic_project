@@ -27,12 +27,12 @@ function HeroThird() {
           <div className="space-y-4 px-3 py-8 justify-center rounded-full shadow-2xl shadow-gray-400 items-center">
             {[
               {
-                icon: <FaUserTie size={23} />,
+                icon: <FaUserTie size={20} />,
                 title: "Professionalism",
                 desc: "At Atlantic Fenders & Support Services, professionalism is embedded in every aspect of our operations",
               },
               {
-                icon: <GiJusticeStar size={40} />,
+                icon: <GiJusticeStar size={30} />,
                 title: "Integrity",
                 desc: "We operate with transparency, honesty, and accountability to build lasting trust with our clients and partners.",
               },
@@ -42,12 +42,12 @@ function HeroThird() {
                 desc: "Teamwork is the backbone of our success, where every department works seamlessly together to ensure efficient and reliable offshore support services",
               },
               {
-                icon: <MdSupportAgent size={40} />,
+                icon: <MdSupportAgent size={55} />,
                 title: "Customer Focus",
                 desc: "At Atlantic Fenders, our clients are at the heart of everything we do. We go above and beyond to understand their unique needs and deliver tailored solutions that exceed expectations",
               },
               {
-                icon: <MdHealthAndSafety size={25} />,
+                icon: <MdHealthAndSafety size={45} />,
                 title: "Health & Safety",
                 desc: "We constantly evolve by implementing the latest safety protocols and technologies to ensure the well-being of our employees, clients, and the environment.",
               },

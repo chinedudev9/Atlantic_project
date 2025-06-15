@@ -14,7 +14,7 @@ const services = [
   {
     title: "Manning",
     description: "Our certified POACs bring over a decade of mooring expertise...",
-    backgroundImage: "/vessel/spmops.jpg",
+    backgroundImage: "/gallery/mooringmaster.jpg",
     icon: <FaUserTie size={64} color="gray" className="text-white" />,
   },
   {
@@ -59,7 +59,7 @@ function ServiceComponent() {
 
   return (
     <div
-    className="flex flex-col h-[70vh] items-center py-10 px-4 relative z-20 bg-center bg-contain transition-all duration-1000"
+    className="flex flex-col h-[70vh] items-center py-10 px-4 relative z-20 bg-contain transition-all duration-1000"
       style={{ backgroundImage: `url(${selectedService.backgroundImage})` }}
     >
       <div className="absolute pt-10 inset-0 bg-black/50 z-0">
@@ -88,7 +88,7 @@ function ServiceComponent() {
         {/* Icon + Description */}
         <div className="flex flex-col items-center text-center gap-6">
           <div>{selectedService.icon}</div>
-          <p className="text-white max-w-3xl px-2">{selectedService.description}</p>
+          <p className="text-white max-w-3xl px-2 font-extralight">{selectedService.description}</p>
         </div>
       </div>
     </div>

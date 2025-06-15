@@ -1,14 +1,35 @@
+"use client";
 import Contact from '@/components/Contact';
 import Link from 'next/link';
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { FaEnvelope } from 'react-icons/fa'
 
-async function page() {
-  //  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tenants/${process.env.NEXT_PUBLIC_TENANT_ID}/external/vacancies`, {
-  //  headers: { Accept: 'application/json' }
- // });
-  //const data = await res.json();
- // const vacancies = data.data || [];
+
+const vacancy = () => {
+  const [vacancy, setVacancy] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchVacancies = async () => {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tenants/${process.env.NEXT_PUBLIC_TENANT_ID}/external/vacancies`, {
+          headers: { Accept: 'application/json' }
+        });
+        const data = await res.json();
+        console.log('Vacancies data:', data);
+
+        setVacancy(data.data || []);
+      } catch (error) {
+        console.error('Error fetching vacancies:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVacancies();
+  }, []);
+
+   if (loading) return <p>Loading vacancies...</p>;
 
   return (
     <div className='justify-center items-center'>
@@ -113,25 +134,25 @@ async function page() {
         </div>
         </div>
       </div>
-     {/* <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
-      <h1 className="text-xl font-bold mb-4">Job Board</h1>
-      {vacancies.length === 0 ? (
+      <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
+      <h1 className="text-xl font-bold mb-4">Current Vacancies</h1>
+      {vacancy.length === 0 ? (
        <p>No vacancies at the moment. Please check back later.</p>
       ) : (
+        
         <ul>
-          {vacancies.map((vacancy: { id: React.Key | null | undefined; title: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; description: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; }) => (
+          {vacancy.map((vacancy: { id: React.Key | null | undefined; title: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; description: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; }) => (
             <li key={vacancy.id} className="mb-4">
               <h3>{vacancy.title}</h3>
               <p>{vacancy.description}</p>
-              <Link href={`/apply/${vacancy.id}`} className="text-blue-600 underline">Apply Now</Link>
+              <Link href={`/apply/${vacancy.id}`} className="text-blue-600 underline text-sm">Apply Now</Link>
             </li>
           ))}
         </ul>
-      
       )}
-    </div> */}
+    </div>
     </div>
   )
 }
 
-export default page
+export default vacancy;

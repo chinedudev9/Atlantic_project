@@ -7,7 +7,7 @@ export default function VacancyAlert() {
   const [vacancy, setVacancy] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/vacancies`)
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tenants/${process.env.NEXT_PUBLIC_TENANT_ID}/external/vacancies`)
       .then(res => res.json())
       .then(data => {
         if (data.length > 0) {

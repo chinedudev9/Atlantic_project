@@ -68,6 +68,14 @@ export default function Header() {
                 pathname === '/galley' ? 'hover:text-blue-800' : ''}`}>
                 GALLERY {pathname === '/gallery' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
               </Link>
+              <Link href="/esg" className={`relative pb-1.5 hover:text-blue-800 ${
+                pathname === '/esg' ? 'hover:text-blue-800' : ''}`}>
+                ESG {pathname === '/esg' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
+              <Link href="/csr" className={`relative pb-1.5 hover:text-blue-800 ${
+                pathname === '/csr' ? 'hover:text-blue-800' : ''}`}>
+                CSR {pathname === '/csr' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-green-700"></span>)}
+              </Link>
             </div> 
         </motion.div>
       </div>
@@ -75,8 +83,8 @@ export default function Header() {
       {/* Mobile Menu - Shown when menu is open */}
       {isMenuOpen && (
         <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 2 }}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 2 }}
         transition={{ duration: 2 }}
         className="absolute top-16 right-0 w-55 mt-0.5 border-l rounded-b-3xl z-50 shadow-lg lg:hidden"
         style={{ backgroundColor: "var(--background)" }}>
@@ -91,6 +99,8 @@ export default function Header() {
               <Link className='' href="/services">SERVICES</Link>
               <Link className='' href="/fleets">FLEETS</Link>
               <Link className='' href="/gallery">GALLERY</Link>
+              <Link className='' href="/esg">ESG</Link>
+              <Link className='' href="/csr">CSR</Link>
               <Link className='' href="/career">CAREER</Link>
           </motion.div>
         </motion.div>

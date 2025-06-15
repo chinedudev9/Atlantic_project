@@ -70,7 +70,7 @@ const TeamShowcase: React.FC = () => {
   return (
     <div className='pt-10 h-auto relative z-20'
       style={{ background: "var(--background)" }}>
-        <p className='text-center text-blue-900 md:text-2xl font-bold'>Meet Our Team &   
+        <p className='text-center text-blue-900 font-semibold text-2xl md:font-bold'>Meet Our Team &   
            <span className='text-white py-0.5 rounded pr-2 ml-2 bg-green-900'> Let's Greet</span></p>
     <section
       className="flex px-3 md:px-30 py-10 flex-col md:flex-row items-center gap-5"
@@ -90,8 +90,8 @@ const TeamShowcase: React.FC = () => {
       </div>
 
       <div className="w-full text-center md:text-left">
-        <h2 className="text-2xl font-bold text-green-900 mt-2 md:mt-0 mb-4">{slides[currentSlide].title}</h2>
-        <p className="mb-8">{slides[currentSlide].description}</p>
+        <h2 className="md:text-2xl font-bold text-green-900 mt-2 md:mt-0 mb-4">{slides[currentSlide].title}</h2>
+        <p className="mb-8 text-sm">{slides[currentSlide].description}</p>
 
         {/* Dots Navigation */}
         <div className="flex justify-center md:justify-start mt-4 space-x-2">

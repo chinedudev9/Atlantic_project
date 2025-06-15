@@ -12,6 +12,10 @@ const messages = [
     title: 'Mission',
     content:
       'Atlantic Fenders and Support Services, we strive to deliver reliable, innovative, and customer focused marine services that add value to our client while upholding the highest standards of safety, integrity, and professionalism.',
+      description: "We are committed to archiving:",
+      p1: "• No harm to people",
+      p2: "• No damage to the environment",
+      p3: "• No damage to property"
   },
   {
     title: 'Vision',
@@ -31,7 +35,7 @@ function Page() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % messages.length)
-    }, 7000) 
+    }, 10000) 
 
     return () => clearInterval(interval)
   }, [])
@@ -56,11 +60,20 @@ function Page() {
           backgroundBlendMode: 'darken',
         }}
       >
-        <div style={{ maxWidth: '800px' }}>
-          <h2 className='text-3xl md:text-5xl font-serif sm:text-4xl font-extrabold mb-4'>
+        <div style={{ maxWidth: '900px' }} className=''>
+          <h2 className='text-3xl md:text-5xl font-serif sm:text-4xl text-gray-400 font-extrabold mb-4'>
             {currentMessage.title}
           </h2>
-          <p className='text-sm'>{currentMessage.content}</p>
+          <p className='text-sm font-bold px-3'>{currentMessage.content}</p>
+          <div className='md:px-80 md:text-left'>
+            <p className='mt-3 font-semibold'>{currentMessage.description}</p>
+            <ul className='text-sm px-20 text-left md:px-0 text-nowrap'>
+              <li>{currentMessage.p1}</li>
+              <li>{currentMessage.p2}</li>
+              <li>{currentMessage.p3}</li>
+            </ul>
+          </div>
+
         </div>
       </div>
       < Contact />
@@ -86,7 +99,7 @@ function Page() {
         </div>
         <div className="md:w-1/2 py-10 flex flex-col text-left space-y-2 md:pl-40 font-medium md:pt-30 ">
           <Link href={"/sts"} className="hover:transform hover:scale-120 transition duration-500 ease-in-out">
-            Ship to Ship Operations
+            Ship-to-Ship Operations
           </Link>
           <Link href={"/services#manning"} className="hover:transform hover:scale-120 transition duration-500 ease-in-out">
             Manning

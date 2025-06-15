@@ -14,11 +14,11 @@ const Footer = () => {
           Atlantic Fenders & Support Services
         </div>
 
-      <div className="flex pb-10 gap-2 mt-2 justify-center">
-          <Link href="https://www.linkedin.com/company/atlantic-fenders-and-support-services/" className=" hover:text-white">
+      <div className="flex pb-8 gap-2 mt-2 justify-center">
+          <Link href="https://www.linkedin.com/company/atlantic-fenders-and-support-services/" target="_blank" rel="noopener noreferrer" className=" hover:text-white">
             <FaLinkedin size={23} color="#0077B5" />
           </Link>
-          <Link href="https://www.youtube.com/channel/UCwlwl7U73ta6afKo4ahADJQ" className=" hover:text-white">
+          <Link href="https://www.youtube.com/channel/UCwlwl7U73ta6afKo4ahADJQ" target="_blank" rel="noopener noreferrer" className=" hover:text-white">
             <FaYoutube size={23} color="#FF0000" />
           </Link>
         </div>
@@ -53,9 +53,9 @@ const Footer = () => {
         <div className="flex space-x-4 md:space-x-8 justify-center items-center mt-8 pb-20">
            <Link className='hover:underline' href="/">Home</Link>
            <hr className="w-px h-4 bg-gray-400 border-0" />
-           <Link className='hover:underline' href="#contact">Contact</Link>
+           <Link className='hover:underline' href="services">Services</Link>
            <hr className="w-px h-4 bg-gray-400 border-0" />
-           <Link className='hover:underline' href="/services">Services</Link>
+           <Link className='hover:underline' href="/sts">Ship-to-Ship</Link>
            <hr className="w-px h-4 bg-gray-400 border-0 hover:underline" />
            <Link className='hover:underline' href="/documents">Docs</Link>
           </div>

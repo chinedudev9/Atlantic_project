@@ -32,10 +32,16 @@ const slides = [
     description: 'Contact Us',
   },
   {
+    image: '/vessel/andrienne66.jpg',
+    title: 'We Celebrate over 1,000,000 Man-hours of Operations without a Lost-time Incident',
+    subtitle: 'This milestone reflects our strong safety culture, rigorous procedures, and the ongoing vigilance of our team — demonstrating AFSS’ s ability to execute complex operations safely, efficiently, and responsible.',
+    description: 'Get a Quote',
+  },
+  {
     video: '/videos/video5.mp4',
     title: 'Complete Services at Your Fingertips',
     subtitle: 'We go the extra nautical mile for our clients. From reliable Mooring Masters to offshore crew, we are guided.',
-    description: 'Get a Quote',
+    description: 'Contact Us',
   },
   {
     image: '/headerImage/greener.jpg',
@@ -128,7 +134,7 @@ export default function HeroSlider() {
             transition={{ duration: 1 }}
             className="text-white"
           >
-            <h1 className="text-3xl md:text-5xl font-extrabold text-gray-300 mb-4">
+            <h1 className="text-2xl md:text-5xl font-extrabold text-gray-300 mb-4">
               {slides[currentIndex].title}
             </h1>
             <p className="mb-8 font-bold max-w-xl text-xs md:text-sm text-balance text-gray-400">
@@ -157,7 +163,7 @@ export default function HeroSlider() {
       {/* Arrows */}
       <button
         onClick={goToPrev}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded hover:bg-black/60 transition"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 rounded hover:bg-black/60 transition"
         aria-label="Previous slide"
       >
         <ChevronLeft className="hidden md:flex w-8 h-8 md:w-10 md:h-10 text-white" />
