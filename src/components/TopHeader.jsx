@@ -42,14 +42,14 @@ function TopHeader() {
   const current = addresses[currentIndex]
 
   return (
-    <div className=' hidden md:flex justify-between items-center px-15 py-2'
+    <div className=' hidden md:flex justify-between items-center px-15 py-1'
       style={{ backgroundColor: "var(--top-header)", color: "var(--text-color)" }}>
 
       {/* Left: Location Icon and Address */}
       <div className="flex items-center gap-4" style={{ color: "var(--icon)" }}>
         <MdLocationOn size={20} />
         <span
-          className={`text-sm font-semibold transition-all duration-500 ease-in-out transform ${
+          className={`text-xs font-semibold transition-all duration-500 ease-in-out transform ${
             visible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
           }`}
           style={{ color: "var(--accent)" }}
@@ -66,7 +66,7 @@ function TopHeader() {
       </div>
           
         {/* Right: Contact Info */}
-        <div className="flex text-xs items-center text-nowrap gap-6" style={{ color: "var(--icon)" }}>
+        <div className="flex text-xs items-center font-bold text-nowrap gap-6" style={{ color: "var(--icon)" }}>
            <Link href={"/career"}><h2 className="cursor-pointer hover:underline">Career</h2></Link>
            <button className='cursor-pointer hover:underline' onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Contact Us
            </button>

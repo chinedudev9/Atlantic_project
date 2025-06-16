@@ -3,12 +3,11 @@ import SafetyBanner from '@/components/SafetyBanner';
 import React from 'react';
 
 const documents = [
-  { title: 'Corperate Overview', date: 'December 07, 2024', link: '/pdf/corperate_overview.pdf' },
   { title: 'Company Organogram', date: 'December 07, 2024', link: '/pdf/AFSS_organogram.pdf' },
   { title: 'Career Overview', date: 'February 31, 2025', link: '/pdf/career_afss.pdf' },
-  { title: 'AFSS Policy', date: 'April 25, 2025', link: '/pdf/Updated_AFSS_Policy.pdf' },
-  { title: 'Compliance & Commitment', date: 'February 4, 2025', link: '/pdf/compliance.pdf' },
-  { title: 'Pneumatic Fenders', date: 'June 11, 2024', link: '/pdf/Pneumatic_Rubber.pdf' },
+  { title: 'Policy', date: 'April 25, 2025', link: '/pdf/Updated_AFSS_Policy.pdf' },
+  { title: 'Compliance Statement', date: 'June 06, 2025', link: '/pdf/compliance.pdf' },
+  { title: 'Assests', date: 'June 06, 2025', link: '/pdf/assests.pdf' },
 ];
 
 function pages() {
@@ -26,9 +25,9 @@ function pages() {
               <h2 className="text-lg font-semibold">{doc.title}</h2>
               <p className="text-sm text-gray-500">{doc.date}</p>
             </div>
-            <a href={doc.link} download className="text-blue-600 hover:underline">
-              Download
-            </a>
+             <a href={`${doc.link}#toolbar=0`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+               View
+             </a>
           </li>
         ))}
       </ul>

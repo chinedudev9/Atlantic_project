@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: 'flagcdn.com',
         pathname: '/**', // allow all paths
       },
+        {
+        protocol: 'https',
+        hostname: 'www.playbook.com',
+        pathname: '**',
+      },
     ],
   },
 };

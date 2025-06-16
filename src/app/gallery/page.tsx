@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 const videos = [
   'https://youtu.be/Fza-dWw_nsU',
+  'https://youtube.com/shorts/LdhZYGvNbqo'
 ];
 
 const images = [
@@ -17,26 +18,28 @@ const images = [
   '/gallery/crew1.jpg',
   '/gallery/crew.jpg',
   '/gallery/crew3.jpg',
+  '/gallery/csr1.jpg',
+  '/gallery/csr2.jpg',
+  '/gallery/csr3.jpg',
+  '/gallery/csr5.jpg',
+  '/gallery/csr4.jpg',
+  '/gallery/csr6.jpg',
   '/gallery/img.jpg',
   '/gallery/img2.jpg',
   '/gallery/img3.jpg',
   '/gallery/img4.jpg',
   '/gallery/img5.jpg',
-  '/gallery/img6.jpg',
   '/gallery/img7.jpg',
   '/gallery/img8.jpg',
   '/gallery/img9.jpg',
-  '/gallery/img10.jpg',
   '/gallery/img11.jpg',
   '/gallery/img12.jpg',
   '/gallery/img13.jpg',
-  // Add more images
 ];
 
 export default function GalleryPage() {
   const [currentVideo, setCurrentVideo] = useState(0);
     const [modalImage, setModalImage] = useState<string | null>(null);
-    const [likes, setLikes] = useState<{ [key: string]: number }>({});
   
     const isYouTube = (url: string) => url.includes('youtu');
   
@@ -52,13 +55,7 @@ export default function GalleryPage() {
     const youtubeId = currentSrc.includes('youtu.be/')
       ? currentSrc.split('youtu.be/')[1]
       : currentSrc.includes('v=') ? currentSrc.split('v=')[1] : '';
-  
-    const handleLike = (src: string) => {
-      setLikes((prev) => ({
-        ...prev,
-        [src]: (prev[src] || 0) + 1,
-      }));
-    };
+
 
   return (
         <div className="items-center">
@@ -112,14 +109,6 @@ export default function GalleryPage() {
                     objectFit="cover"
                     className="rounded-lg"
                   />
-                                  <div className="flex justify-between items-center px-2 mt-1">
-                  <button
-                    onClick={() => handleLike(src)}
-                    className="text-sm text-blue-600 hover:underline"
-                  >
-                    ❤️ {likes[src] || 0}
-                  </button>
-                </div>
                 </div>
               </div>
             ))}
@@ -145,26 +134,6 @@ export default function GalleryPage() {
               </div>
             </div>
           )}
-    
-          {/* Links */}
-          <div className="flex md:gap-10 gap-3 justify-center items-center mt-4 mb-4 text-sm px-2 md:px-0">
-            <Link
-              href="https://www.youtube.com/channel/UCwlwl7U73ta6afKo4ahADJQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-800 text-white px-3 py-2 rounded hover:bg-blue-600 transition duration-300"
-            >
-              Watch More Videos
-            </Link>
-            <Link
-              href="https://www.playbook.com/s/elijahphotography/Kt9RFjhQeL8CKrC1AgAwLXRc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-800 text-white px-3 py-2 rounded hover:bg-blue-600 transition duration-300"
-            >
-              View More Images
-            </Link>
-          </div>
           <Policy />
         </div>
   );

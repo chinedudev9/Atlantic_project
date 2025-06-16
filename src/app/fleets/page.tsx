@@ -6,13 +6,18 @@ import Link from 'next/link';
 import Policy from '@/components/Policy';
 
 const videos = [
+  'https://youtu.be/OnaEv5KaaO4',
   '/videos/video4.mp4',
   '/videos/video5.mp4',
   'https://youtu.be/uVtGrGKS9Cg',
   'https://youtu.be/3nk-TGesrfw',
+  'https://youtu.be/HTUJHHVTuJM',
 ];
 
 const images = [
+  '/vessel/andrienne217.jpg',
+  '/vessel/andrienne005.jpg',
+  '/vessel/andrienne97.jpg',
   '/vessel/catherine3.jpg',
   '/vessel/AFSS_catherine1.jpg',
   '/vessel/AFSS_catherine2.jpg',
@@ -21,24 +26,30 @@ const images = [
   '/vessel/augusteo_pic.jpg',
   '/vessel/augusteo_p.jpg',
   '/vessel/towing.jpg',
-  '/vessel/andrienne.jpg',
-  '/vessel/andrienne1.jpg',
-  '/vessel/andrienne197.jpg',
-  '/vessel/andrienne99.jpg',
   '/vessel/andrienne_front.jpg',
-  '/vessel/andrienne217.jpg',
-  '/vessel/andrienne97.jpg',
   '/vessel/andrienne_bridge.jpg',
   '/vessel/andrienne_eng3.jpg',
   '/vessel/andrienne_eng.jpg',
   '/echo1/echo1.jpg',
   '/echo1/boat-services.jpg',
+  '/vessel/andrienne008.jpg',
+  '/vessel/andrienne013.jpg',
+  '/vessel/andrienne012.jpg',
+  '/vessel/andrienne007.jpg',
+  '/vessel/andrienne009.jpg',
+  '/vessel/andrienne014.jpg',
+  '/vessel/andrienne015.jpg',
+  '/vessel/andrienne66.jpg',
+  '/vessel/andrienne017.jpg',
+  '/vessel/andrienne01.jpg',
+  '/vessel/andrienne002.jpg',
+  '/vessel/andrienne003.jpg',
+  '/vessel/andrienne004.jpg',
 ];
 
 export default function GalleryPage() {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [modalImage, setModalImage] = useState<string | null>(null);
-  const [likes, setLikes] = useState<{ [key: string]: number }>({});
 
   const isYouTube = (url: string) => url.includes('youtu');
 
@@ -54,13 +65,6 @@ export default function GalleryPage() {
   const youtubeId = currentSrc.includes('youtu.be/')
     ? currentSrc.split('youtu.be/')[1]
     : currentSrc.includes('v=') ? currentSrc.split('v=')[1] : '';
-
-  const handleLike = (src: string) => {
-    setLikes((prev) => ({
-      ...prev,
-      [src]: (prev[src] || 0) + 1,
-    }));
-  };
 
   return (
     <div className="items-center">
@@ -114,14 +118,6 @@ export default function GalleryPage() {
                 objectFit="cover"
                 className="rounded-lg"
               />
-              <div className="flex justify-between items-center px-2 mt-1">
-              <button
-                onClick={() => handleLike(src)}
-                className="text-sm text-blue-600 hover:underline"
-              >
-                ❤️ {likes[src] || 0}
-              </button>
-            </div>
             </div>
           </div>
         ))}
@@ -147,26 +143,6 @@ export default function GalleryPage() {
           </div>
         </div>
       )}
-
-      {/* Links */}
-      <div className="flex md:gap-10 gap-3 justify-center items-center mt-4 mb-4 text-sm px-2 md:px-0">
-        <Link
-          href="https://www.youtube.com/channel/UCwlwl7U73ta6afKo4ahADJQ"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-blue-800 text-white px-3 py-2 rounded hover:bg-blue-600 transition duration-300"
-        >
-          Watch More Videos
-        </Link>
-        <Link
-          href="https://www.playbook.com/s/elijahphotography/Kt9RFjhQeL8CKrC1AgAwLXRc"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-blue-800 text-white px-3 py-2 rounded hover:bg-blue-600 transition duration-300"
-        >
-          View More Images
-        </Link>
-      </div>
       <Policy />
     </div>
   );

@@ -59,7 +59,7 @@ function ServiceComponent() {
 
   return (
     <div
-    className="flex flex-col h-[70vh] items-center py-10 px-4 relative z-20 bg-contain transition-all duration-1000"
+    className="flex flex-col h-[70vh] items-center py-10 px-4 relative z-20 bg-contain transition-all duration-500"
       style={{ backgroundImage: `url(${selectedService.backgroundImage})` }}
     >
       <div className="absolute pt-10 inset-0 bg-black/50 z-0">
