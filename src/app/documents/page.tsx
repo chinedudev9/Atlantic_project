@@ -1,4 +1,5 @@
 import Contact from '@/components/Contact';
+import Policy from '@/components/Policy';
 import SafetyBanner from '@/components/SafetyBanner';
 import React from 'react';
 
@@ -22,10 +23,10 @@ function pages() {
         {documents.map((doc, index) => (
           <li key={index} className="flex justify-between items-center border-b pb-2">
             <div>
-              <h2 className="text-lg font-semibold">{doc.title}</h2>
-              <p className="text-sm text-gray-500">{doc.date}</p>
+              <h2 className="text-sm md:text-lg font-semibold">{doc.title}</h2>
+              <p className="text-xs md:text-sm text-gray-500">{doc.date}</p>
             </div>
-             <a href={`${doc.link}#toolbar=0`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+             <a href={`${doc.link}#toolbar=0`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">
                View
              </a>
           </li>
@@ -33,6 +34,7 @@ function pages() {
       </ul>
     </div>
   </div>
+  <Policy />
   </div>
   )
 }

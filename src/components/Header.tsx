@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
 import SearchToggle from "@/components/SearchToggle";
@@ -10,6 +10,31 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close the menu when the user navigates to a new page
+  useEffect(() => {
+      setIsMenuOpen(false);
+  }, [pathname]);
+
+
+  // Close the menu when the user clicks outside of it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)){
+        setIsMenuOpen(false);
+      }
+    };
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
 
   return (
     <header className="py-3 md:py-1 pl-6 pr-4 shadow-2xl rounded-b-xl md:rounded-b-none"
@@ -83,6 +108,7 @@ export default function Header() {
       {/* Mobile Menu - Shown when menu is open */}
       {isMenuOpen && (
         <motion.div 
+        ref={menuRef}
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 2 }}
         transition={{ duration: 2 }}

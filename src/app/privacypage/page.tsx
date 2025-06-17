@@ -2,6 +2,7 @@
 import SafetyBanner from "@/components/SafetyBanner";
 import Contact from "@/components/Contact";
 import Link from "next/link";
+import Policy from "@/components/Policy";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -68,6 +69,7 @@ export default function PrivacyPolicyPage() {
 
       <p className="text-sm text-gray-500">Last updated: Jan 3, 2025</p>
     </div>
+    <Policy />
     </div>
   );
 }

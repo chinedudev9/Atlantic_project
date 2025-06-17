@@ -15,7 +15,7 @@ const videos = [
 ];
 
 const images = [
-  '/vessel/andrienne217.jpg',
+  '/vessel/andrienne1.jpg',
   '/vessel/andrienne005.jpg',
   '/vessel/andrienne97.jpg',
   '/vessel/catherine3.jpg',
