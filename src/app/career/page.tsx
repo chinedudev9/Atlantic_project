@@ -1,5 +1,6 @@
 "use client";
 import Contact from '@/components/Contact';
+import Policy from '@/components/Policy';
 import Link from 'next/link';
 import { useEffect, useState } from 'react'
 import { FaEnvelope } from 'react-icons/fa'
@@ -7,7 +8,7 @@ import { FaEnvelope } from 'react-icons/fa'
 
 
 const Vacancy = () => {
-  const [vacancies, setVacancies] = useState();
+  const [vacancy, setVacancies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -138,12 +139,12 @@ const Vacancy = () => {
       {loading ? (
         <p className='md:text-left'>Loading vacancies...</p>
       ) : 
-      vacancies.length === 0 ? (
+      vacancy.length === 0 ? (
        <p className='md:text-left'>No vacancies at the moment or poor network. Please check back later.</p>
       ) : (
         
         <ul className='md:flex md:items-start space-y-4 gap-10'>
-          {vacancies.map((item: any) => (
+          {vacancy.map((item: any) => (
             <li key={item.id} className='bg-white p-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300'>
               <h2 className='text-lg font-semibold text-blue-800'>{item.title}</h2>
               <p className='text-gray-600 mb-2'>{item.description}</p>
@@ -153,6 +154,7 @@ const Vacancy = () => {
         </ul>
       )} 
     </div>
+    <Policy />
     </div>
   )
 }
