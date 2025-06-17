@@ -4,8 +4,8 @@ import React from 'react';
 
 const documents = [
   { title: 'Company Organogram', date: 'December 07, 2024', link: '/pdf/AFSS_organogram.pdf' },
-  { title: 'Career Overview', date: 'February 31, 2025', link: '/pdf/career_afss.pdf' },
-  { title: 'Policy', date: 'April 25, 2025', link: '/pdf/Updated_AFSS_Policy.pdf' },
+  { title: 'Technical Organogram', date: 'February 31, 2025', link: '/pdf/technical.pdf' },
+  { title: 'Policy', date: 'April 25, 2025', link: '/pdf/AFSS_Policy.pdf' },
   { title: 'Compliance Statement', date: 'June 06, 2025', link: '/pdf/compliance.pdf' },
   { title: 'Assests', date: 'June 06, 2025', link: '/pdf/assests.pdf' },
 ];

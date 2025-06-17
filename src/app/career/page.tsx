@@ -5,20 +5,21 @@ import { useEffect, useState } from 'react'
 import { FaEnvelope } from 'react-icons/fa'
 
 
-const vacancy = () => {
-  const [vacancy, setVacancy] = useState([]);
+
+const Vacancy = () => {
+  const [vacancies, setVacancies] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchVacancies = async () => {
       try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tenants/${process.env.NEXT_PUBLIC_TENANT_ID}/external/vacancies`, {
-          headers: { Accept: 'application/json' }
+          method: 'GET',
+          cache: 'no-store'
         });
         const data = await res.json();
-        console.log('Vacancies data:', data);
 
-        setVacancy(data.data || []);
+        setVacancies(data.data || []);
       } catch (error) {
         console.error('Error fetching vacancies:', error);
       } finally {
@@ -28,8 +29,6 @@ const vacancy = () => {
 
     fetchVacancies();
   }, []);
-
-   if (loading) return <p>Loading vacancies...</p>;
 
   return (
     <div className='justify-center items-center'>
@@ -85,7 +84,7 @@ const vacancy = () => {
       <Contact />
       <div className=" md:flex-row justify-center py-10 px-2 items-center bg-gray-100 md:px-30 gap-8">
         <p className="text-blue-600 font-bold px-10 md:text-2xl text-xl text-center mb-8">
-        Ready to Join Us? <strong className='text-sm text-green-600 px-2 py-2 bg-amber-50 rounded-md'>You've got the Green-Light</strong>
+        Ready to Join Us? <strong className='text-sm text-green-600 px-2 py-2 bg-gray-200 rounded-md'>You've got the Green-Light</strong>
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 space-x-4 space-y-4 md:space-y-0 md:space-x-4">
         <div className="md:w-1/3 h-auto px-10 md:py-20 md:text-sm rounded-full bg-gray-200 hover:bg-blue-100 py-15">
@@ -135,24 +134,27 @@ const vacancy = () => {
         </div>
       </div>
       <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
-      <h1 className="text-xl font-bold mb-4">Current Vacancies</h1>
-      {vacancy.length === 0 ? (
-       <p>No vacancies at the moment. Please check back later.</p>
+      <h1 className="text-xl font-bold mb-4 md:text-left">Current Vacancies</h1>
+      {loading ? (
+        <p className='md:text-left'>Loading vacancies...</p>
+      ) : 
+      vacancies.length === 0 ? (
+       <p className='md:text-left'>No vacancies at the moment or poor network. Please check back later.</p>
       ) : (
         
-        <ul>
-          {vacancy.map((vacancy: { id: React.Key | null | undefined; title: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; description: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; }) => (
-            <li key={vacancy.id} className="mb-4">
-              <h3>{vacancy.title}</h3>
-              <p>{vacancy.description}</p>
-              <Link href={`/apply/${vacancy.id}`} className="text-blue-600 underline text-sm">Apply Now</Link>
+        <ul className='md:flex md:items-start space-y-4 gap-10'>
+          {vacancies.map((item: any) => (
+            <li key={item.id} className='bg-white p-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300'>
+              <h2 className='text-lg font-semibold text-blue-800'>{item.title}</h2>
+              <p className='text-gray-600 mb-2'>{item.description}</p>
+              <Link href={item.link} className='text-blue-600 hover:underline' target="_blank" rel="noopener noreferrer"  >Apply Now</Link>
             </li>
           ))}
         </ul>
-      )}
+      )} 
     </div>
     </div>
   )
 }
 
-export default vacancy;
+export default Vacancy;

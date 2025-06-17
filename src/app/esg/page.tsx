@@ -5,39 +5,30 @@ import Contact from '@/components/Contact';
 
 function page() {
   return (
-    <div>
-      <div className="w-full md:px-20 px-2 p-5 bg-gray-100 rounded-lg shadow-lg flex items-center">
-        <div className="w-1/2 text-left md:pr-12 mx-auto my-5">
+    <div className=''>
+      <div className="w-full md:px-20 md:mt-0 md:mx-0 px-2 rounded-lg md:bg-gray-100 shadow-lg md:flex items-center">
+        <div className="md:w-1/2 md:text-left md:pr-12 px-2 my-5 rounded-xl bg-gray-100 md:bg-none p-5">
            <h1 className="md:text-5xl text-2xl font-extrabold text-green-700 mb-8">E<span className='text-blue-600'>S</span><span className='text-orange-500'>G</span></h1>
           <div>
             <p className='text-lg text-green-700 mb-3 font-extrabold'>
               Environmental Stewardship 
             </p>
             <p className="font-bold text-[#750475]">Our Focus:</p>
-            <p className='text-sm mb-5 text-gray-700'>Build a portfolio with modern, efficient assets in the right locations, staying ahead of our 
+            <p className='text-sm mb-5 text-gray-700'>To build a portfolio with modern and efficient assets in the right locations, staying ahead of our 
             customers’ needs, while positively impacting the environment and addressing climate 
             change risk.</p>
             <p className="font-bold text-[#750475]">Our Action</p>
-            <ul className="list-disc text-sm list-item text-gray-700 space-y-2 ">
-            <li className="text-sm">Achieve sustainable building certification for new development globally and incorporate cutting-edge, efficient to benefit our customers. 
-              Within new development and existing assets, enable more efficient customer operations, promote the health and well-being of our customers, and deliver sustainability benefits 
-              that enhance profitability and reduce environmental footprints. Some measures can 
-              include responsibly sourced materials, decreased water and energy usage, lower carbon 
-              footprints, and enhanced biodiversity that benefits our customers, our employees, our 
-              surrounding communities, and the environment. 
-            </li>
-            <li>
-              Seek and deploy innovative technologies to future-proof and enhance the resilience of 
-              our buildings to unpredictable changes in the climate or the environment.
-            </li>
-            <li className="">
-              Use a global Environmental Management System (EMS) that is implemented, maintained, and continually improved under the requirement of ISO 14001:2015
+            <ul className="md:list-disc text-sm list-item text-gray-700 space-y-2 ">
+            <li className="text-sm">We aim to achieve sustainable building certification for all new developments globally by integrating cutting-edge, efficient solutions that directly benefit our 
+              customers. Within both new and existing assets, we will enable more efficient operations, promote health and well-being, and deliver sustainability benefits that drive profitability and reduce 
+              environmental impact. Our initiatives may include responsibly sourced materials, reduced water and energy consumption, lower carbon emissions, and enhanced biodiversity — creating value for our 
+              customers, employees, communities, and the environment.
             </li>
             </ul>
           </div>
 
         </div>
-        <div className="w-1/2 mx-auto my-5 text-center">
+        <div className="md:w-1/2 mx-auto mb-13 md:mb-0 mt-10 md:mt-0 bg-gray-100 my-5 text-center">
         <Image
         src="/images/esg.jpg"
         alt="ESG Image"
@@ -48,8 +39,8 @@ function page() {
         </div>
       </div>
       <Contact />
-      <div className="w-full md:px-20 px-2 p-5 bg-gray-100 rounded-lg shadow-lg flex items-center">
-        <div className="w-1/2 text-left md:pr-12 mx-auto my-5">
+      <div className="md:w-full md:px-20 p-2 mt-8 space-y-8 md:mt-0 md:bg-gray-100 rounded-lg shadow-lg md:flex">
+        <div className="md:w-1/2 text-left md:pr-12 md:my-5 rounded-xl bg-gray-100 md:bg-none px-2 py-5">
            <h1 className="md:text-5xl text-2xl font-extrabold text-green-700 mb-8">E<span className='text-blue-600'>S</span><span className='text-orange-500'>G</span></h1>
             <p className='text-lg text-blue-600 mb-3 font-extrabold'>
               Social Responsibility
@@ -58,7 +49,7 @@ function page() {
             <p className='text-sm mb-5 text-gray-700'>Deepen relationships with our key stakeholders by investing in our employees and partnering with our customers, communities, investors, and suppliers. 
             </p>
             <p className="font-bold text-[#750475]">Our Action</p>
-            <ul className="list-disc text-sm list-item text-gray-700 space-y-2 ">
+            <ul className="md:list-disc text-sm list-item text-gray-700 space-y-2 ">
             <li className="text-sm">Engage with our employees to provide a challenging, dynamic, inclusive, and diverse 
               work environment that supports their professional development, as well as promoting a 
               good work-life balance that prioritizes their overall health and wellness. 
@@ -78,7 +69,7 @@ function page() {
               Modern Slavery Act, Human Rights Policy, and Diversity &Inclusion.</li>
             </ul>
         </div>
-        <div className="w-1/2 text-left">
+        <div className="md:w-1/2 md:text-left md:mt-5 py-5 p-2 mb-10 md:mb-0 bg-gray-100">
             <h1 className="md:text-5xl text-2xl font-extrabold text-green-700 mb-8">E<span className='text-blue-600'>S</span><span className='text-orange-500'>G</span></h1>
             <p className='text-lg text-orange-500 mb-3 font-extrabold'>
               Ethics & Governance 
@@ -89,7 +80,7 @@ function page() {
                business 
             </p>
             <p className="font-bold text-[#750475]">Our Action</p>
-            <ul className="list-disc text-sm list-item text-gray-700 space-y-2 ">
+            <ul className="md:list-disc text-sm list-item text-gray-700 space-y-2 ">
             <li className="text-sm"> Maintain strong corporate governance practices through exemplary board stewardship, 
                management accountability, and proactive risk management.
             </li>

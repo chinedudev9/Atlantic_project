@@ -76,7 +76,7 @@ const PolicySlider = () => {
     >
       <div className="flex items-center justify-center mb-10">
         <hr className="w-10 border-red-500" />
-        <h2 className="mx-3 text-green-500 text-2xl font-bold">Company Policies</h2>
+        <h2 className="mx-3 text-green-500 text-2xl font-bold text-nowrap">Company Policies</h2>
         <hr className="w-10 border-blue-500" />
       </div>
 
@@ -94,8 +94,8 @@ const PolicySlider = () => {
 
         <Slider ref={(slider) => { sliderRef = slider; }} {...settings}>
           {policies.map((policy, idx) => (
-            <div key={idx} className="px-5 md:px-10">
-              <div className="bg-black/50 backdrop-blur-md p-4 sm:p-6 rounded-lg shadow-lg">
+            <div key={idx} className="w-full md:px-10">
+              <div className="bg-black/50 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-lg">
                 <h3 className="text-lg sm:text-xl text-center font-semibold text-gray-400 mb-3">
                   {policy.title}
                 </h3>

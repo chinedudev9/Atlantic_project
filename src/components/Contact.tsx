@@ -27,9 +27,8 @@ function HeroSecond() {
   <div className="flex-1 flex flex-col items-center justify-center text-center">
     <AiOutlineDollarCircle size={30}  />
     <h2 style={{ color: "var(--accent2)" }} className="font-bold text-xl mb-4 mt-3">Enquiries</h2>
-    <h2
-      className=" text-white font-bold cursor-pointer bg-red-900 hover:bg-red-700 rounded-lg px-3 py-1.5 shadow-md 
-      transition duration-300 ease-in-out"
+    <h2  
+      className=" text-white font-bold cursor-pointer bg-red-800 rounded-lg px-3 py-1.5 shadow-md hover:bg-blue-600 transition-colors duration-300"
       onClick={() => setIsOpen(true)}
     >
       GET A QUOTE
