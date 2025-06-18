@@ -135,7 +135,7 @@ const Vacancy = () => {
         </div>
       </div>
       <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
-      <h1 className="text-xl font-bold mb-4 md:text-left">Current Vacancies</h1>
+      <h1 className="text-xl md:text-2xl font-extrabold text-blue-800 mb-5">Current Vacancies</h1>
       {loading ? (
         <p className='md:text-left'>Loading vacancies...</p>
       ) : 
@@ -143,12 +143,16 @@ const Vacancy = () => {
        <p className='md:text-left'>No vacancies at the moment or poor network. Please check back later.</p>
       ) : (
         
-        <ul className='md:flex md:items-start space-y-4 gap-10'>
+        <ul className=' md:px-15 px-3 text-left space-y-8 gap-10 py-4 shadow-2xl'>
           {vacancy.map((item: any) => (
             <li key={item.id} className='bg-white p-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300'>
-              <h2 className='text-lg font-semibold text-blue-800'>{item.title}</h2>
-              <p className='text-gray-600 mb-2'>{item.description}</p>
-              <Link href={item.link} className='text-blue-600 hover:underline' target="_blank" rel="noopener noreferrer"  >Apply Now</Link>
+              <p className='text-lg  font-semibold text-blue-800'>Position</p>
+              <h2 className='text-sm text-gray-600 mb-3'>{item?.vacancy_request?.designation?.name}</h2>
+              <p className='text-lg  font-semibold text-blue-800'>Department</p>
+              <h2 className='text-sm text-gray-600 mb-3'>{item?.vacancy_request?.designation?.department?.name}</h2>
+              <p className="text-lg font-semibold text-blue-800">Job Description</p>
+              <h2 className='text-sm text-gray-600 mb-5 md:mr-30'>{item?.vacancy_request?.job_description}</h2>
+              <Link href={item.link} className='text-white px-3 hover:underline py-2 bg-blue-800' target="_blank" rel="noopener noreferrer">Apply Now</Link>
             </li>
           ))}
         </ul>
