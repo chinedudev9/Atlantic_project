@@ -137,10 +137,10 @@ const Vacancy = () => {
       <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
       <h1 className="text-xl md:text-2xl font-extrabold text-blue-800 mb-5">Current Vacancies</h1>
       {loading ? (
-        <p className='md:text-left'>Loading vacancies...</p>
+        <p className=''>Loading vacancies...</p>
       ) : 
       vacancy.length === 0 ? (
-       <p className='md:text-left'>No vacancies at the moment or poor network. Please check back later.</p>
+       <p className=''>No vacancies at the moment or poor network. Please check back later.</p>
       ) : (
         
         <ul className=' md:px-15 px-3 text-left space-y-8 gap-10 py-4 shadow-2xl'>
