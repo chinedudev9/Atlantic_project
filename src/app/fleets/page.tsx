@@ -107,7 +107,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Image Gallery */}
-      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8">
+      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-2 md:p-8 p-2">
         {images.map((src, index) => (
           <div key={index} className="relative group">
             <div className="w-full h-48 relative cursor-pointer" onClick={() => setModalImage(src)}>
@@ -130,7 +130,7 @@ export default function GalleryPage() {
             <img
               src={modalImage}
               alt="Full View"
-              style={{ width: '100%', height: '90%' }}
+              style={{ width: '100%', height: '80%' }}
               loading="lazy"
               className="rounded-lg"
             />
