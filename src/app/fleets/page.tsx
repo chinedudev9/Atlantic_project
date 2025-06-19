@@ -130,7 +130,7 @@ export default function GalleryPage() {
             <img
               src={modalImage}
               alt="Full View"
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: '100%', height: '90%' }}
               loading="lazy"
               className="rounded-lg"
             />
