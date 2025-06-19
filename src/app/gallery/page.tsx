@@ -114,12 +114,11 @@ export default function GalleryPage() {
           {/* Modal */}
           {modalImage && (
             <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
-              <div className="relative max-w-4xl w-full h-[80vh]">
+              <div className="relative max-w-4xl w-full md:h-[90vh]">
                 <img
                   src={modalImage}
                   alt="Full View"
-                  style={{ width: '100%', height: '80%' }}
-                  className="rounded-lg"
+                  className="rounded-lg "
                 />
                 <button
                   onClick={() => setModalImage(null)}

@@ -42,11 +42,11 @@ export default function Header() {
         {/* Logo */}
         <motion.div
           initial={{ opacity: 1, x: 50 }}
-          animate={{ opacity: 1, x: 5 }}
+          animate={{ opacity: 1, x: 2 }}
           transition={{ duration: 3 }}
-           className='flex-shrink-0.5 hover:animate-pulse cursor-pointer'>
+           className='flex-shrink-0.5 hover:animate-pulse cursor-pointer w-[150px] h-[50px]'>
           <Link href="/">
-          <img src="/images/AFSS_logo.png" alt="AFSS_logo" width='150' height='80' className='object-contain outline-none'
+          <img src="/images/AFSS_logo.png" alt="AFSS_logo" width='150' height='80' className='object-contain'
            sizes="(max-width: 768px) 120px, 150px" />
           </Link>
         </motion.div>
