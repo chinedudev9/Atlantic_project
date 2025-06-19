@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  //output: 'export',
+  //trailingSlash: true,
   env: {
     API_BASE_URL: process.env.API_BASE_URL,
     TENANT_ID: process.env.TENANT_ID,

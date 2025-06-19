@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import { FaUserTie, FaUsers } from "react-icons/fa";
 import { GiJusticeStar } from "react-icons/gi";
@@ -119,25 +118,25 @@ function HeroThird() {
             )}
             {activeTab === "certificates" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:px-10 px-4">
-                <Image
+                <img
                   src="/certs/cert1.png"
                   alt="Certificate 1"
-                  width={200}
-                  height={100}
+                  width='200'
+                  height='100'
                   className="rounded-lg shadow"
                 />
-                <Image
+                <img
                   src="/certs/cert2.png"
                   alt="Certificate 2"
-                  width={200}
-                  height={100}
+                  width='200'
+                  height='100'
                   className="rounded-lg shadow"
                 />
-                <Image
+                <img
                   src="/certs/cert3.jpg"
                   alt="Certificate 3"
-                  width={200}
-                  height={100}
+                  width='200'
+                  height='100'
                   className="rounded-lg shadow"
                 />
               </div>

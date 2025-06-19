@@ -1,17 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Policy from '@/components/Policy';
-import Link from 'next/link';
 
 const videos = [
   'https://youtu.be/Fza-dWw_nsU',
-  'https://youtube.com/shorts/LdhZYGvNbqo'
 ];
 
 const images = [
-  '/gallery/img15.jpg',
   '/gallery/img16.jpg',
   '/gallery/img15.jpg',
   '/gallery/img14.jpg',
@@ -21,6 +17,7 @@ const images = [
   '/gallery/csr1.jpg',
   '/gallery/csr2.jpg',
   '/gallery/csr3.jpg',
+  '/gallery/img17.jpg',
   '/gallery/csr5.jpg',
   '/gallery/csr4.jpg',
   '/gallery/csr6.jpg',
@@ -102,11 +99,11 @@ export default function GalleryPage() {
             {images.map((src, index) => (
               <div key={index} className="relative group">
                 <div className="w-full h-48 relative cursor-pointer" onClick={() => setModalImage(src)}>
-                  <Image
+                  <img
                     src={src}
                     alt={`Gallery Image ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
+                    style={{ width: '90%', height: '100%' }}
+                  //  loading="lazy"
                     className="rounded-lg"
                   />
                 </div>
@@ -118,11 +115,10 @@ export default function GalleryPage() {
           {modalImage && (
             <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
               <div className="relative max-w-4xl w-full h-[80vh]">
-                <Image
+                <img
                   src={modalImage}
                   alt="Full View"
-                  layout="fill"
-                  objectFit="contain"
+                  style={{ width: '70%', height: '100%' }}
                   className="rounded-lg"
                 />
                 <button

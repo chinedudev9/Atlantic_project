@@ -1,6 +1,4 @@
-// src/components/Footer.js
-
-import Image from 'next/image';
+// src/components/Footer.jsimport Link from 'next/link';
 import Link from 'next/link';
 import {  FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { IoCallOutline } from 'react-icons/io5';
@@ -61,9 +59,9 @@ const Footer = () => {
           </div>
 
         <div className="gap-6 mb-15 flex flex-col md:flex-row md:space-y-0 space-y-4 justify-center items-center">
-          <Image src={'/images/image.png'} alt={'bluestar certified'} height={100} width={150} />
-          <Image src={'/images/image1.png'} alt={'bluestar certified'} height={100} width={150} />
-          <Image src={'/images/image2.png'} alt={'bluestar certified'} height={100} width={150} />
+          <img src='/images/image.png' alt='bluestar certified' height='100' width='150' />
+          <img src='/images/image1.png' alt='bluestar certified' height='100' width='150' />
+          <img src='/images/image2.png' alt='bluestar certified' height='100' width='150' />
         </div>
 
       <div className="border-t bg-gray-900 border-gray-800 bottom-0 pt-6 text-center text-gray-500 text-xs">

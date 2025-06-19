@@ -29,11 +29,11 @@ function page() {
 
         </div>
         <div className="md:w-1/2 mx-auto mb-13 md:mb-0 mt-10 md:mt-0 bg-gray-100 my-5 text-center">
-        <Image
+        <img
         src="/images/esg.jpg"
         alt="ESG Image"
-        width={500}
-        height={300}
+        width='500'
+        height='300'
         className="w-full h-auto object-cover"
         />
         </div>

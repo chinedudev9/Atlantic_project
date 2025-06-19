@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -47,8 +46,8 @@ export default function Header() {
           transition={{ duration: 3 }}
            className='flex-shrink-0.5 hover:animate-pulse cursor-pointer'>
           <Link href="/">
-          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={150} height={80} className='object-contain outline-none'
-           sizes="(max-width: 768px) 120px, 150px" priority />
+          <img src="/images/AFSS_logo.png" alt="AFSS_logo" width='150' height='80' className='object-contain outline-none'
+           sizes="(max-width: 768px) 120px, 150px" />
           </Link>
         </motion.div>
 

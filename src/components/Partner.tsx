@@ -1,7 +1,6 @@
 "use client";
 
 import Slider from "react-slick";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -83,11 +82,11 @@ const Partners = () => {
         <Slider {...sliderSettings}>
           {partners.map((partner, index) => (
             <div key={index} className="flex justify-center items-center px-4">
-              <Image
+              <img
                 src={partner.logo}
                 alt={`Partner ${index + 1}`}
-                width={120}
-                height={60}
+                width='120'
+                height='60'
                 className="object-contain rounded-xl"
               />
             </div>

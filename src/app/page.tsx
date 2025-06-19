@@ -23,7 +23,8 @@ export default function Home() {
       <AboutUs />
       <Contact />
       <ServiceComponent />
-  
+
+      <VacancyAlert />
       <Clock />
       <TeamComponent />
       <Partner />
@@ -31,7 +32,7 @@ export default function Home() {
       <Policy />
       
        
-       <VacancyAlert />
+       
       <ContactPopup />
       <LiveChatWidget />
       <CookieBanner />

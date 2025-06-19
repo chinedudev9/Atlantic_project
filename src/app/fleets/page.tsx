@@ -111,11 +111,11 @@ export default function GalleryPage() {
         {images.map((src, index) => (
           <div key={index} className="relative group">
             <div className="w-full h-48 relative cursor-pointer" onClick={() => setModalImage(src)}>
-              <Image
+              <img
                 src={src}
                 alt={`Gallery Image ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
+                loading="lazy"
+                style={{ width: '100%', height: '100%' }}
                 className="rounded-lg"
               />
             </div>
@@ -127,11 +127,11 @@ export default function GalleryPage() {
       {modalImage && (
         <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
           <div className="relative max-w-4xl w-full h-[80vh]">
-            <Image
+            <img
               src={modalImage}
               alt="Full View"
-              layout="fill"
-              objectFit="contain"
+              style={{ width: '90%', height: '100%' }}
+              loading="lazy"
               className="rounded-lg"
             />
             <button

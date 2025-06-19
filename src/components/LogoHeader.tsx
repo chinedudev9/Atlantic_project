@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -25,11 +24,11 @@ const LogoHeader = () => {
         className="flex items-center gap-2"
       >
         {/* Logo: visible only in light mode */}
-        <Image
+        <img
           src="/AFSS_logo.png"
           alt="AFSS Logo"
-          width={150}
-          height={100}
+          width='150'
+          height='100'
           className="object-contain dark:hidden"
         />
 

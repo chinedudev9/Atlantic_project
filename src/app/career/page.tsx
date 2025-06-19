@@ -8,7 +8,7 @@ import { FaEnvelope } from 'react-icons/fa'
 
 
 const Vacancy = () => {
-  const [vacancy, setVacancies] = useState<any[]>([]);
+  const [vacancy, setVacancies] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const Vacancy = () => {
       <Contact />
       <div className=" md:flex-row justify-center py-10 px-2 items-center bg-gray-100 md:px-30 gap-8">
         <p className="text-blue-600 font-bold px-10 md:text-2xl text-xl text-center mb-8">
-        Ready to Join Us? <strong className='text-sm text-green-600 px-2 py-2 bg-gray-200 rounded-md'>You've got the Green-Light</strong>
+        Ready to Join Us?
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 space-x-4 space-y-4 md:space-y-0 md:space-x-4">
         <div className="md:w-1/3 h-auto px-10 md:py-20 md:text-sm rounded-full bg-gray-200 hover:bg-blue-100 py-15">
@@ -121,8 +121,8 @@ const Vacancy = () => {
 
         <div className="md:w-1/3 h-[80vh] hover:bg-blue-100 md:px-10 md:pt-23 md:text-sm rounded-full justify-center px-8 bg-gray-200 py-15 md:pl-10">
         <p className="text-center font-semibold mb-3 text-xl text-blue-900 pt-15 md:pt-0">HR Contact & Support</p>
-          <h2 className="text-center mb-8">
-          We are committed to supporting our employees at every stage of their careers. Whether you're looking to join our team, need assistance with HR-related inquiries, or require support during your time with us, our dedicated HR team is here to help.
+         <h2 className="text-center mb-8">
+           We are committed to supporting our employees at every stage of their careers. Whether you&#39;re looking to join our team, need assistance with HR-related inquiries, or require support during your time with us, our dedicated HR team is here to help.
           </h2>
           <div className="items-center text-center justify-center space-x-2">
           <div className="flex items-center justify-center space-x-2 mb-1">
@@ -134,28 +134,30 @@ const Vacancy = () => {
         </div>
         </div>
       </div>
-      <div className="py-10 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
-      <h1 className="text-xl md:text-2xl font-extrabold text-blue-800 mb-5">Current Vacancies</h1>
+      <div id='vacancies' className="py-10 scroll-m-20 px-4 md:px-20 items-center justify-center bg-gray-300 text-center">
+      <h1 className="text-xl md:text-2xl font-extrabold text-blue-800 mb-5">Top Vacancies</h1>
       {loading ? (
-        <p className=''>Loading vacancies...</p>
+        <p className=''>Loading vacancies, please wait...</p>
       ) : 
       vacancy.length === 0 ? (
-       <p className=''>No vacancies at the moment or poor network. Please check back later.</p>
+       <p className=''>Sorry! We have no vacancies at the moment. Please check back later.</p>
       ) : (
-        
-        <ul className=' md:px-15 px-3 text-left space-y-8 gap-10 py-4 shadow-2xl'>
+        <div className="">
+        <ul className='h-auto md:px-5 px-3 text-left space-y-8  py-4 shadow-2xl md:space-y-5 md:grid md:grid-cols-3 md:gap-4 items-stretch'>
           {vacancy.map((item: any) => (
-            <li key={item.id} className='bg-white p-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300'>
+            <li key={item.id} className='bg-white p-4 rounded-md shadow-md hover:shadow-lg flex flex-col justify-between h-full'>
               <p className='text-lg  font-semibold text-blue-800'>Position</p>
               <h2 className='text-sm text-gray-600 mb-3'>{item?.vacancy_request?.designation?.name}</h2>
               <p className='text-lg  font-semibold text-blue-800'>Department</p>
               <h2 className='text-sm text-gray-600 mb-3'>{item?.vacancy_request?.designation?.department?.name}</h2>
-              <p className="text-lg font-semibold text-blue-800">Job Description</p>
-              <h2 className='text-sm text-gray-600 mb-5 md:mr-30'>{item?.vacancy_request?.job_description}</h2>
-              <Link href={item.link} className='text-white px-3 hover:underline py-2 bg-blue-800' target="_blank" rel="noopener noreferrer">Apply Now</Link>
+              <p className="text-lg font-semibold text-blue-800">Location</p>
+              <h2 className='text-xs text-gray-600 mb-2 md:mr-30'>{item?.vacancy_request?.based_at}</h2>
+              <p className="text-xs mb-5">{item?.created_at}</p>
+              <Link href={item.link} className='text-white text-center px-3 hover:underline py-2 bg-blue-800 rounded-md' target="_blank" rel="noopener noreferrer">Apply Now</Link>
             </li>
           ))}
         </ul>
+        </div>
       )} 
     </div>
     <Policy />

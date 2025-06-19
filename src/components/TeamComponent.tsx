@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { useSwipeable } from 'react-swipeable';
 
 interface Slide {
@@ -79,11 +78,11 @@ const TeamShowcase: React.FC = () => {
 
       <div className="w-full">
       {slides.length > 0 && slides[currentSlide]?.imageUrl && (
-  <Image
+  <img
     src={urlFor(slides[currentSlide].imageUrl).url()}
     alt={slides[currentSlide].title || 'Team Member'}
-    width={400}
-    height={200}
+    width='400'
+    height='200'
     className="rounded"
   />
 )}

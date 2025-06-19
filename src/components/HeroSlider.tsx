@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -110,10 +109,9 @@ export default function HeroSlider() {
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
           ) : (
-            <Image
+            <img
               src={slide.image || '/default-image.jpg'}
               alt={`slide-${index}`}
-              fill
               className="w-full h-full object-cover"
             />
           )}
