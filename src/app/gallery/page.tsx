@@ -118,7 +118,7 @@ export default function GalleryPage() {
                 <img
                   src={modalImage}
                   alt="Full View"
-                  style={{ width: '90%', height: '100%' }}
+                  style={{ width: '100%', height: '100%' }}
                   className="rounded-lg"
                 />
                 <button
