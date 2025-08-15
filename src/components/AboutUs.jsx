@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FaUserTie, FaUsers } from "react-icons/fa";
+import { FaUserTie, FaUsers, FaHandshake } from "react-icons/fa";
 import { GiJusticeStar } from "react-icons/gi";
 import { MdSupportAgent, MdHealthAndSafety } from "react-icons/md";
 import Link from "next/link";
@@ -23,32 +23,37 @@ function HeroThird() {
             </h2>
             <hr className="w-10 md:w-20 border-gray-600" />
           </div>
-          <div className="space-y-4 px-3 py-8 justify-center rounded-full shadow-2xl shadow-gray-400 items-center">
+          <div className="space-y-2 px-2 py-6 justify-center rounded-full shadow-2xl shadow-gray-400 items-center">
             {[
               {
-                icon: <FaUserTie size={20} />,
+                icon: <FaUserTie size={30} />,
                 title: "Professionalism",
-                desc: "At Atlantic Fenders & Support Services, professionalism is embedded in every aspect of our operations",
+                desc: "We maintain high standards of work quality and conduct, emphasizing continuous learning and accountability across all levels of the organization.",
               },
               {
-                icon: <GiJusticeStar size={30} />,
+                icon: <FaHandshake size={30} />,
+                title: "Respect",
+                desc: "We foster a culture of mutual regard, where every individual, employee, client or partner is valued, heard and treated with dignity.",
+              },
+              {
+                icon: <GiJusticeStar size={40} />,
                 title: "Integrity",
-                desc: "We operate with transparency, honesty, and accountability to build lasting trust with our clients and partners.",
+                desc: "We uphold transparancy and ethical decision-making in everything we do, ensuring that our action reflect honesty and strong moral principles.",
               },
               {
                 icon: <FaUsers size={40} />,
                 title: "Team Work",
-                desc: "Teamwork is the backbone of our success, where every department works seamlessly together to ensure efficient and reliable offshore support services",
+                desc: "We foster a collaborative and inclusive environment, where respect and diverse perspectives are valued, and collective achievements are recognised.",
               },
               {
-                icon: <MdSupportAgent size={55} />,
+                icon: <MdSupportAgent size={40} />,
                 title: "Customer Focus",
-                desc: "At Atlantic Fenders, our clients are at the heart of everything we do. We go above and beyond to understand their unique needs and deliver tailored solutions that exceed expectations",
+                desc: "We are commited to understanding and exceeding our customers' expectations, driving every department to prioritize exceptional customer experiences.",
               },
               {
-                icon: <MdHealthAndSafety size={45} />,
+                icon: <MdHealthAndSafety size={40} />,
                 title: "Health & Safety",
-                desc: "We constantly evolve by implementing the latest safety protocols and technologies to ensure the well-being of our employees, clients, and the environment.",
+                desc: "We enforce rigorous health and safety protocols, promote employee wellbeing, and cultivate a culture where safety everyone's responsibility.",
               },
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">

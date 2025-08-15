@@ -7,6 +7,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SafetyBanner from "@/components/SafetyBanner";
 import Contact from "@/components/Contact";
 import PopUp from "@/components/PopUp";
+import Partner from "@/components/Partner";
+import Policy from "@/components/Policy";
 
 const images = [
   {
@@ -46,10 +48,10 @@ const STSCarousel = () => {
     arrows: false,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    speed: 1200,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 6000,
     swipe: true,
     customPaging: (i: any) => (
       <div className="w-10 h-1 bg-black mx-1"></div>
@@ -60,7 +62,7 @@ const STSCarousel = () => {
   return (
     <div>
       <SafetyBanner />
-    <div className="relative h-[100vh] rounded-xl overflow-hidden md:mx-50 mt-10">
+    <div className="relative md:h-[140vh] rounded-xl overflow-hidden md:mx-50 mt-10">
     <p className="text-center text-gray-800  text-xl font-bold md:text-2xl sm:text-lg mb-8">
               Fendering Configuration
             </p>
@@ -75,16 +77,16 @@ const STSCarousel = () => {
 
       <Slider ref={(slider) => { sliderRef = slider; }} {...settings}>
         {images.map((item, idx) => (
-          <div key={idx} className="relative w-full h-[80vh]">
-            <Image
+          <div key={idx} className="relative flex items-center justify-center">
+            <img
               src={item.src}
               alt={item.caption}
-              fill
-              className="px-2 pb-4"
-              priority
+              
+              className="px-2 pb-2 w-full  md:border-2 border-gray-200"
+              
               
             />
-            <div className="absolute inset-0 bg-opacity-30 flex items-end justify-center text-center">
+            <div className="absolute inset-0  flex items-end justify-center text-center">
               <p className="text-gray-700 text-sm sm:text-lg font-semibold">
                 {item.caption}
               </p>
@@ -136,7 +138,10 @@ const STSCarousel = () => {
         )}
 
     </div>
+    <Partner />
+    <Policy />
     </div>
+
   );
 };
 

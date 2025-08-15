@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import Policy from '@/components/Policy';
 import Contact from '@/components/Contact';
+import Partner from '@/components/Partner';
 
 function page() {
   return (
@@ -100,6 +101,7 @@ function page() {
             </ul>
         </div>
       </div>
+      <Partner />
       <Policy />
     </div>
   )

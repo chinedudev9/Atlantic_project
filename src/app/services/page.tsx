@@ -1,5 +1,6 @@
 import Clock from '@/components/Clock'
 import Contact from '@/components/Contact'
+import Partner from '@/components/Partner'
 import Policy from '@/components/Policy'
 import Link from 'next/link'
 import React from 'react'
@@ -36,7 +37,7 @@ function page() {
       <div className="md:w-1/2 py-10 flex flex-col md:text-left space-y-2 md:pl-40 font-medium md:pt-30 ">
       <p className="md:hidden mb-5 text-green-700 text-xl font-extrabold">WHAT WE DO</p>
       <Link href={"/sts"} className="hover:transform hover:scale-120 transition duration-500 ease-in-out">
-            Ship to Ship Operations
+            Ship-to-Ship Operations
           </Link>
           <Link href={"#manning"} className="hover:transform hover:scale-120 transition duration-500 ease-in-out">
             Manning
@@ -58,7 +59,7 @@ function page() {
       <Contact />
       <section id='sts' className="h-auto flex shadow-gray-500 flex-col py-10 md:px-50 md:py-20 md:space-y-7 space-y-5 justify-center items-center text-center">
         <FaShip size={60} color="" className='text-green-900' />
-        <p className="text-2xl font-medium text-blue-950">SHIP TO SHIP OPERATION</p>
+        <p className="text-2xl font-medium text-blue-950">SHIP-TO-SHIP OPERATION</p>
         <p className="">
           Atlantic Fenders & Support Services (AFSS) offer a safe, efficient, and internationally compliant Ship-to-Ship (STS) transfer operations across key West African anchorages. Our STS services are tailored to support the transfer of crude oil, refined petroleum products, LPG, and other cargo between vessels at sea or at anchorage...
         </p>
@@ -207,6 +208,7 @@ function page() {
         </div>
         </div>
       </section>
+      <Partner />
       <Policy />
     </div>
     

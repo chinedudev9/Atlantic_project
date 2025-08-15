@@ -1,4 +1,5 @@
 import Contact from '@/components/Contact';
+import Partner from '@/components/Partner';
 import Policy from '@/components/Policy';
 import SafetyBanner from '@/components/SafetyBanner';
 import React from 'react';
@@ -34,6 +35,7 @@ function pages() {
       </ul>
     </div>
   </div>
+  <Partner />
   <Policy />
   </div>
   )

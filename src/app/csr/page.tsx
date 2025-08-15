@@ -3,6 +3,7 @@ import Image from 'next/image';
 import SafetyBanner from '@/components/SafetyBanner';
 import Contact from '@/components/Contact';
 import Policy from '@/components/Policy';
+import Clock from '@/components/Clock';
 
 function page() {
   return (
@@ -33,6 +34,7 @@ function page() {
               </div>
             </div>
             <Contact />
+            <Clock />
             <Policy />
     </div>
   )

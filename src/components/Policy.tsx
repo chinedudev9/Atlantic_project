@@ -72,7 +72,7 @@ const PolicySlider = () => {
         backgroundBlendMode: "darken",
         backgroundColor: "rgba(0, 0, 0, 0.6)",
       }}
-      className="bg-cover bg-center relative text-white py-10 px-4 sm:px-10 md:px-20"
+      className="bg-cover  bg-center relative text-white pt-10 px-4 sm:px-10 md:px-20"
     >
       <div className="flex items-center justify-center mb-10">
         <hr className="w-10 border-red-500" />

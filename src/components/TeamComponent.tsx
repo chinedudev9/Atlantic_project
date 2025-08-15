@@ -19,13 +19,13 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    title: 'QHSSE & Marine Safety Management',
-    description: 'Our QHSSE team is dedicated to ensuring the highest standards of quality, health, safety, security, and environmental management in all our operations. We prioritize the safety of our employees, clients, and the environment. We are committed to continuous improvement and compliance with industry regulations. We are proud to be ISO 9001, ISO 14001, and ISO 45001 certified...',
+    title: 'QHSSE & Compliance',
+    description: 'Our QHSSE team is dedicated to ensuring industry standards in quality, health, safety, security, and environmental management in all our operations. We prioritize the safety of our employees, clients, and the environment. We are committed to continuous improvement and compliance with industry regulations. We are proud to be ISO 9001, ISO 14001, and ISO 45001 certified...',
     imageUrl: '/images/safety.png',
   },
   {
     id: 4,
-    title: 'Strategy Team',
+    title: 'Strategy',
     description: 'Our team provide client-centered Solutions, focused on improving customer satisfaction through monitoring service delivery, continuous feedback loops, and long-term partnerships. We believe in a world were data drives innovation, technology and decision-making, and we are committed to delivering value through every given information.',
     imageUrl: '/images/strategy.jpeg',
   },

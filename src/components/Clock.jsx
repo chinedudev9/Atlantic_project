@@ -103,7 +103,7 @@ const AnalogClock = ({ name, tz }) => {
   const dateStr = time.toFormat('ccc, LLL dd, yyyy');
 
   return (
-    <div className="p-4 bg-gray-200 rounded-xl shadow-lg w-60 flex flex-col items-center text-gray-900">
+    <div className="p-4 bg-blue-100 rounded-xl shadow-lg w-60 flex flex-col items-center text-gray-900">
       <div className="flex items-center justify-between w-full text-lg mb-2">
         <span>🕓</span>
         {isDay ? (
@@ -114,8 +114,8 @@ const AnalogClock = ({ name, tz }) => {
       </div>
       <h2 className="text-md font-bold mb-2">{name}</h2>
       <ClockFace time={time} />
-      <p className="mt-3 font-semibold">{dateStr}</p>
-      <p className="font-medium">
+      <p className="mt-3 font-semibold text-sm">{dateStr}</p>
+      <p className="font-medium text-sm">
         {weather && `🌤️ ${weather.charAt(0).toUpperCase() + weather.slice(1)}`}
       </p>
     </div>
@@ -128,10 +128,10 @@ const AnalogClockGrid = () => {
               <div className="flex items-center  justify-center mb-10">
                <hr className="w-10 md:w-30 border-red-500" />
                <h2 className="mx-2 md:4 text-blue-800 text-2xl font-bold">Weather Clocks</h2>
-               <hr className="w-10 md:w-30 border-gray-600" />
+               <hr className="w-10 md:w-30 border-blue-200" />
       </div>
 
-      <div className="overflow-x-auto flex gap-6 px-4">
+      <div className="overflow-x-auto scroll-smooth flex gap-2 px-4">
         {cities.map((city) => (
           <AnalogClock key={city.name} {...city} />
         ))}

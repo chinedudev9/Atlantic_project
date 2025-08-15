@@ -31,7 +31,7 @@ export default function VacancyAlert() {
       };
 
       fetchVacancies();
-    }, 65000); 
+    }, 30000); 
 
     return () => clearTimeout(timer);
   }, []);

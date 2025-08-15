@@ -5,6 +5,7 @@ import Contact from '@/components/Contact'
 import Policy from '@/components/Policy';
 import Link from 'next/link';
 import Clock from '@/components/Clock';
+import Partner from '@/components/Partner';
 
 
 const messages = [
@@ -23,9 +24,9 @@ const messages = [
       "To become west Africa's most trusted and responsive provider of integrated maritime and offshore support services - delivering operational excellence in a safe and environmentally sound manner.",
   },
   {
-    title: 'Core Values',
+    title: 'Core Values "PRITCH"',
     content:
-      'Professionalism, Integrity, Teamwork, Customer Focus, Health & Safety',
+      'Professionalism, Respect, Integrity, Teamwork, Customer Focus, Health & Safety',
   },
 ];
 
@@ -119,6 +120,7 @@ function Page() {
       </div>
       </div>
       <Clock />
+      <Partner />
      <Policy />
     </div>
   )

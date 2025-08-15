@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Policy from '@/components/Policy';
+import Partner from '@/components/Partner';
 
 const videos = [
   'https://youtu.be/Fza-dWw_nsU',
@@ -129,6 +130,7 @@ export default function GalleryPage() {
               </div>
             </div>
           )}
+          <Partner />
           <Policy />
         </div>
   );

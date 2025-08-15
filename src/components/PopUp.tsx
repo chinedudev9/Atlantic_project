@@ -56,7 +56,7 @@ export default function PopupForm({ isOpen, onClose }: PopupFormProps) {
         </button>
 
         <h1 className="text-xl font-bold mb-2 text-center text-blue-900">
-          Message Operations Team
+          Message Operation Team
         </h1>
         <h3
           className="font-bold mb-4 text-center"
